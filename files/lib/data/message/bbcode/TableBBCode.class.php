@@ -6,10 +6,10 @@ require_once(WCF_DIR.'lib/data/message/bbcode/BBCode.class.php');
 /**
  * Parses the [table] bbcode tag
  * 
- * @author	Okan Esen
+ * @author		Okan Esen
  * @copyright	2011 Okan Esen
- * @license	Creative Commons <by-nd> <http://creativecommons.org/licenses/by-nd/3.0/deed.de>
- * @package	de.okanesen.bbcode.table
+ * @license		GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
+ * @package		de.okanesen.bbcode.table
  * @subpackage	data.message.bbcode
  * @category 	Community Framework
  */
