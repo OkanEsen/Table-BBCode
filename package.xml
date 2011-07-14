@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package name="de.okanesen.bbcode.table" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/package.xsd">
+	<packageinformation>
+		<packagename>Table BBCode</packagename>
+		<packagedescription><![CDATA[You can use this plugin to add tables into your posting, without HTML knowledge.]]></packagedescription>
+		<packagedescription language="de"><![CDATA[Mit diesem Plugin können Tabellen in Beiträgen, ohne HTML-Kenntnisse, erstellt werden.]]></packagedescription>
+		<date>2011-05-13</date>
+		<plugin>com.woltlab.wcf.data.message.bbcode</plugin>
+		<version>1.0.3</version>
+		<standalone>0</standalone>
+		<isunique>1</isunique>
+	</packageinformation>
+	
+	<authorinformation>
+		<author><![CDATA[Okan Esen]]></author>
+		<authorurl><![CDATA[http://okan-esen.de]]></authorurl>
+	</authorinformation>
+	
+	<requiredpackages>
+		<requiredpackage minversion="1.0.0">com.woltlab.wcf.data.message.bbcode</requiredpackage>
+	</requiredpackages>
+	
+	<instructions type="install">
+		<files>files.tar</files>
+		<bbcodes>bbcode.xml</bbcodes>
+		<languages languagecode="de">de.xml</languages>
+		<lanugages languagecode="en">en.xml</lanugages>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.0.0">
+		<files>files.tar</files>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.0.1">
+		<files>files.tar</files>
+		<bbcodes>bbcode.xml</bbcodes>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.0.2">
+		<languages languagecode="de">de.xml</languages>
+		<lanugages languagecode="en">en.xml</lanugages>
+	</instructions>
+</package>

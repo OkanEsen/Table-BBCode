@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/bbcodes.dtd">
+<data>
+	<import>
+		<bbcode name="table">
+			<classname>TableBBCode</classname>
+			<allowedchildren>all</allowedchildren>
+			<sourcecode>0</sourcecode>
+			<wysiwygicon>tableM.png</wysiwygicon>
+			<attributes>
+				<attribute name="0">
+					<required>0</required>
+				</attribute>
+			</attributes>
+		</bbcode>
+	</import>
+</data>
