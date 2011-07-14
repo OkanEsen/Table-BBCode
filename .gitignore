@@ -8,3 +8,5 @@ Thumbs.db # thumbnails
 # SVN
 .svn/ # svn folders
 files/.DS_Store
+
+.DS_Store
