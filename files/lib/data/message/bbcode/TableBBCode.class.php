@@ -26,6 +26,9 @@ class TableBBCode implements BBCode {
 		// get table data (td) elements
 		$tableDataElements = preg_split('/\[\*\]/', StringUtil::trim($content), -1, PREG_SPLIT_NO_EMPTY);
 		
+		// set counter for td elements
+		$counter = 0;
+		
 		// remove <br /> elements
 		foreach ($tableDataElements as $key => $val) {
 			$tableDataElements[$key] = StringUtil::trim($val);
@@ -41,12 +44,13 @@ class TableBBCode implements BBCode {
 				$tableHeadElementsTemp .= '<th><div><span class="emptyHead">'.$tableHeadElement.'</span></div></th>';
 			}
 			
-			for ($i = 0; $i < (count($tableDataElements)); $i++) {
-				if (($i % count($tableHeadElements)) == 0) $tableDataElementsTemp .= '<tr class=container-1>';
-				if (($i % count($tableHeadElements)) == (count($tableHeadElements))) $tableDataElementsTemp .= '</tr>';
+			foreach ($tableDataElements as $tableDataElement) {
+				if (($counter % count($tableHeadElements)) == 0) $tableDataElementsTemp .= '<tr class=container-1>';
+				if (($counter % count($tableHeadElements)) == (count($tableHeadElements))) $tableDataElementsTemp .= '</tr>';
 				
-
-				$tableDataElementsTemp .= '<td>'.$tableDataElements[$i].'</td>';
+				$tableDataElementsTemp .= '<td>'.$tableDataElement.'</td>';
+				
+				$counter++;
 			}
 			
 			if ($parser->getOutputType() == 'text/html') {
