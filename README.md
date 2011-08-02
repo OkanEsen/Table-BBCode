@@ -6,7 +6,7 @@ You can use this plugin to add tables into your posting, without HTML knowledge.
 How to use
 ----------
 
-[table='#1,#2,#3,#4'][\*]Test #1 [\*]Test #2 [*]Test #3 [\*]Test #4 [\*]Test #1.1 [\*]Test #2.1 [\*]Test #3.1 [\*]Test #4.1[/table]
+[table='#1,#2,#3,#4'][\*]Test #1 [\*]Test #2 [\*]Test #3 [\*]Test #4 [\*]Test #1.1 [\*]Test #2.1 [\*]Test #3.1 [\*]Test #4.1[/table]
 
 
 License
