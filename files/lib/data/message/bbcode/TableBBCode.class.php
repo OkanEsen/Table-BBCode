@@ -30,7 +30,7 @@ class TableBBCode implements BBCode {
 		$counter = 0;
 		
 		// set index for cycle
-		$cycle = 1;
+		$cycle = $cycleTemp = 1;
 		
 		// remove <br /> elements
 		foreach ($tableDataElements as $key => $val) {
@@ -47,8 +47,13 @@ class TableBBCode implements BBCode {
 				$tableHeadElementsTemp .= '<th><div><span class="emptyHead">'.$tableHeadElement.'</span></div></th>';
 			}
 			
-			foreach ($tableDataElements as $tableDataElement) {				
-				if (($counter % count($tableHeadElements)) == 0) $tableDataElementsTemp .= '<tr class="container-1">';
+			foreach ($tableDataElements as $tableDataElement) {
+				if (($counter % count($tableHeadElements)) == 0) {
+					if ($cycle == $cycleTemp && $counter != 0) $cycle = 2;
+					else $cycle = 1;
+					
+					$tableDataElementsTemp .= '<tr class="container-'.$cycle.'">';
+				}
 				if (($counter % count($tableHeadElements)) == (count($tableHeadElements))) $tableDataElementsTemp .= '</tr>';
 				
 				$tableDataElementsTemp .= '<td>'.$tableDataElement.'</td>';
