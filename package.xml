@@ -4,9 +4,9 @@
 		<packagename>Table BBCode</packagename>
 		<packagedescription><![CDATA[You can use this plugin to add tables into your posting, without HTML knowledge.]]></packagedescription>
 		<packagedescription language="de"><![CDATA[Mit diesem Plugin können Tabellen in Beiträgen, ohne HTML-Kenntnisse, erstellt werden.]]></packagedescription>
-		<date>2011-06-14</date>
+		<date>2011-07-02</date>
 		<plugin>com.woltlab.wcf.data.message.bbcode</plugin>
-		<version>1.0.4</version>
+		<version>1.0.5</version>
 		<standalone>0</standalone>
 		<isunique>1</isunique>
 	</packageinformation>
@@ -42,6 +42,10 @@
 	</instructions>
 	
 	<instructions type="update" fromversion="1.0.3">
+		<files>files.tar</files>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.0.4">
 		<files>files.tar</files>
 	</instructions>
 </package>
