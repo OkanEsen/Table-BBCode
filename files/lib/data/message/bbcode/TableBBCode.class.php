@@ -49,10 +49,8 @@ class TableBBCode implements BBCode {
 			
 			foreach ($tableDataElements as $tableDataElement) {
 				if (($counter % count($tableHeadElements)) == 0) {
-					if ($cycle == 1 && $counter != 0) $cycle = 2;
-					else $cycle = 1;
-					
 					$tableDataElementsTemp .= '<tr class="container-'.$cycle.'">';
+					$cycle = ($cycle == 1) ? 2 : 1;
 				}
 				if (($counter % count($tableHeadElements)) == (count($tableHeadElements))) $tableDataElementsTemp .= '</tr>';
 				
