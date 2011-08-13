@@ -6,10 +6,10 @@ require_once(WCF_DIR.'lib/data/message/bbcode/BBCode.class.php');
 /**
  * Parses the [table] bbcode tag
  * 
- * @author		Okan Esen
+ * @author	Okan Esen
  * @copyright	2011 Okan Esen
- * @license		GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
- * @package		de.okanesen.bbcode.table
+ * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
+ * @package	de.okanesen.bbcode.table
  * @subpackage	data.message.bbcode
  * @category 	Community Framework
  */
@@ -30,7 +30,7 @@ class TableBBCode implements BBCode {
 		$counter = 0;
 		
 		// set index for cycle
-		$cycle = $cycleTemp = 1;
+		$cycle = 1;
 		
 		// remove <br /> elements
 		foreach ($tableDataElements as $key => $val) {
@@ -49,7 +49,7 @@ class TableBBCode implements BBCode {
 			
 			foreach ($tableDataElements as $tableDataElement) {
 				if (($counter % count($tableHeadElements)) == 0) {
-					if ($cycle == $cycleTemp && $counter != 0) $cycle = 2;
+					if ($cycle == 1 && $counter != 0) $cycle = 2;
 					else $cycle = 1;
 					
 					$tableDataElementsTemp .= '<tr class="container-'.$cycle.'">';
