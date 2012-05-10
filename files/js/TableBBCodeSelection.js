@@ -1,6 +1,13 @@
 var tableBBCodeContainerVisible = false;
 var tableBBCodeBox = $('tableBBCodeContainer');
 var tableBBCodeButton = $('button');
+var tableBBCodeRows = 0;
+var tableBBCodeRowsTemp = 0;
+var tableBBCodeCols = 0;
+var tableBBCodeColsTemp = 0;
+var pattern = /\d{1,2}/g;
+var i = 0;
+var j = 0;
 
 if (tableBBCodeButton && tableBBCodeBox) {
 	function showTableBBCodeContainer(evt) {
@@ -31,3 +38,23 @@ if (tableBBCodeButton && tableBBCodeBox) {
 
 	tableBBCodeButton.observe('click', showTableBBCodeContainer);
 }
+
+$$("ul").each(function (element) {
+	element.observe('mouseover', function(event) {
+		var hoveredCol = event.findElement('li');
+		if (hoveredCol) {
+			tableBBCodeRows = hoveredCol.readAttribute("id").match(pattern)[0];
+			tableBBCodeCols = hoveredCol.readAttribute("id").match(pattern)[1];
+			
+			$$("li").each(function (element) {
+				if (element.hasClassName("hovered")) element.removeClassName("hovered");
+			});
+
+			for (i = 1; i <= tableBBCodeRows; i++) {
+				for (j = 1; j <= tableBBCodeCols; j++) {
+					$("col-" + i + "-" + j).addClassName("hovered");
+				}
+			}
+		}
+	});
+});
