@@ -46,15 +46,19 @@ $$("ul").each(function (element) {
 			tableBBCodeRows = hoveredCol.readAttribute("id").match(pattern)[0];
 			tableBBCodeCols = hoveredCol.readAttribute("id").match(pattern)[1];
 			
-			$$("li").each(function (element) {
-				if (element.hasClassName("hovered")) element.removeClassName("hovered");
-			});
+			for (i = 1; i <= tableBBCodeRowsTemp; i++) {
+				for (j = 1; j <= tableBBCodeColsTemp; j++) {
+					$("col-" + i + "-" + j).removeClassName("hovered");
+				}
+			}
 
 			for (i = 1; i <= tableBBCodeRows; i++) {
 				for (j = 1; j <= tableBBCodeCols; j++) {
 					$("col-" + i + "-" + j).addClassName("hovered");
 				}
 			}
+			tableBBCodeRowsTemp = tableBBCodeRows;
+			tableBBCodeColsTemp = tableBBCodeCols;
 		}
 	});
 });
