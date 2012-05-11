@@ -1,4 +1,8 @@
 <div id="tableBBCodeContainer" style="display: none;">
+	<label>
+		<input id="tableHeading" type="checkbox" name="tableHeading" value="1" />
+		Tabellenkopf deaktivieren
+	</label>
 	<ul id="row-1">
 		<li id="col-1-1"></li>
 		<li id="col-1-2"></li>
