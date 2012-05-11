@@ -6,7 +6,7 @@
 		<packagedescription language="de"><![CDATA[Mit diesem Plugin können Tabellen in Beiträgen, ohne HTML-Kenntnisse, erstellt werden.]]></packagedescription>
 		<date>2012-05-11</date>
 		<plugin>com.woltlab.wcf.data.message.bbcode</plugin>
-		<version>1.1.0 beta 1</version>
+		<version>1.1.0</version>
 		<standalone>0</standalone>
 		<isunique>1</isunique>
 	</packageinformation>
@@ -22,6 +22,8 @@
 	
 	<instructions type="install">
 		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<eventlistener>eventlistener.xml</eventlistener>
 		<bbcodes>bbcode.xml</bbcodes>
 		<languages languagecode="de">de.xml</languages>
 		<lanugages languagecode="en">en.xml</lanugages>

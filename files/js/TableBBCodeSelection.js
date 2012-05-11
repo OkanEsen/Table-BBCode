@@ -8,7 +8,8 @@ document.observe("dom:loaded", function() {
 	var tableBBCodeContainerVisible = false;
 	var tableBBCodeBox = $('tableBBCodeContainer');
 	var tableBBCodeButton = $('mce_editor_0_table');
-	var tableBBCodeTableHeading = $("tableHeading").getValue();
+	//var tableBBCodeTableHeading = $("tableHeading").getValue();
+	var tableBBCodeTableHeading = null;
 	var tableBBCodeRows = 0;
 	var tableBBCodeRowsTemp = 0;
 	var tableBBCodeCols = 0;
@@ -48,11 +49,11 @@ document.observe("dom:loaded", function() {
 	}
 	
 	// get checkbox value
-	$("tableHeading").observe('click', function(event) {
-		tableBBCodeTableHeading = $("tableHeading").getValue();
-	});
+	// $("tableHeading").observe('click', function(event) {
+	// 	tableBBCodeTableHeading = $("tableHeading").getValue();
+	// });
 	
-	$$("ul").each(function (element) {
+	$$(".tableBBCodeContainer ul").each(function (element) {
 		element.observe('mouseover', function(event) {
 			// get hovered element
 			var hoveredCol = event.findElement('li');
@@ -66,14 +67,14 @@ document.observe("dom:loaded", function() {
 				// delete old selection
 				for (i = 1; i <= tableBBCodeRowsTemp; i++) {
 					for (j = 1; j <= tableBBCodeColsTemp; j++) {
-						$("col-" + i + "-" + j).removeClassName("hovered");
+						$("col-" + i + "-" + j).removeClassName("container-3");
 					}
 				}
 
 				// set new selection
 				for (i = 1; i <= tableBBCodeRows; i++) {
 					for (j = 1; j <= tableBBCodeCols; j++) {
-						$("col-" + i + "-" + j).addClassName("hovered");
+						$("col-" + i + "-" + j).addClassName("container-3");
 					}
 				}
 				
@@ -82,19 +83,18 @@ document.observe("dom:loaded", function() {
 			}
 		});
 		element.observe('click', function(event) {
-			// get editor content
-			var editorContent = $("editor").getValue();
+			var editorContent = "";
 			
 			// check wether checkbox is set
 			if (tableBBCodeTableHeading == 1) {
-				editorContent += "\n[table]\n";
+				editorContent += "[table]<br />";
 			} else {
-				editorContent += "\n[table='";
+				editorContent += "[table='";
 				for (i = 1; i <= tableBBCodeCols; i++) {
 					editorContent += i;
 					if (i != tableBBCodeCols) editorContent += ",";
 				}
-				editorContent += "']\n";
+				editorContent += "']<br />";
 			}
 			
 			// generate table structure
@@ -102,12 +102,13 @@ document.observe("dom:loaded", function() {
 				for (j = 1; j <= tableBBCodeCols; j++) {
 					editorContent += "[*] " + i + ":" + j + "\t";
 				}
-				editorContent += "\n";
+				editorContent += "<br />";
 			}
-			editorContent += "[/table]\n"
+			editorContent += "[/table]<br />"
 			
 			// insert table structure into edtor
-			$("editor").setValue(editorContent);
+			WysiwygInsert('text', editorContent);
+		
 		
 			// hide selection container
 			if (tableBBCodeBox.visible()) {
@@ -121,7 +122,7 @@ document.observe("dom:loaded", function() {
 			// reset grid selection
 			for (i = 1; i <= tableBBCodeRowsTemp; i++) {
 				for (j = 1; j <= tableBBCodeColsTemp; j++) {
-					$("col-" + i + "-" + j).removeClassName("hovered");
+					$("col-" + i + "-" + j).removeClassName("container-3");
 				}
 			}
 		});
