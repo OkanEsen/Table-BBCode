@@ -4,7 +4,8 @@
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
  * @package	de.okanesen.bbcode.table
  */
-document.observe("dom:loaded", function() {
+
+window.onload = function() {
 	var tableBBCodeContainerVisible = false;
 	var tableBBCodeBox = $('tableBBCodeContainer');
 	var tableBBCodeButton = $('mce_editor_0_table');
@@ -127,4 +128,4 @@ document.observe("dom:loaded", function() {
 			}
 		});
 	});
-});
+}
